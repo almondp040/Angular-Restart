@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head ngSkipHydration>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <title>Password Page</title>
+</head>
+<body>
+  <h1>Password Generate</h1>
+  <div>
+  <label for="passwordLength">Length</label>
+  <input type="text" id="passwordLength" [value]="">
+  </div>
+
+
+  <div class="checkboxes">
+  <input type="checkbox" name="letters" id="letters">
+  <label for="letters">Use Letters</label>
+  <input type="checkbox" name="numbers" id="numbers">
+  <label for="numbers">Use Numbers</label>
+  <input type="checkbox" name="symbols" id="symbols">
+  <label for="symbols">Use Symbols</label>
+  </div>
+
+
+  <div class="button">
+  <button (click)="onButton()">Generate!</button>
+  </div>
+
+  <div class="showPassword">
+  <label for="myPassword">Your Password</label>
+  <input type="text" id="myPassword" [value]="password"> 
+  </div>
+
+<h1>Name: {{ getName() }}</h1> 
+</body>
+</html>
+
+<router-outlet />
