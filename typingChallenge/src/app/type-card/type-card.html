@@ -1,0 +1,31 @@
+<!-- Should look to add some styles! -->
+ <div class="container">
+    <div class="columns is-centered">
+        <div class="box column is-one-third">
+
+
+    <h1 class="title has-text-centered">Typing Challenge!</h1>
+
+    <p class="has-text-centered">
+        @for (letter of randomSentence; track $index) {
+            <span [class]="compare(letter, enteredText[$index])">{{letter}}</span>
+        }
+        
+    </p>
+
+    <div class="field">
+        <input type="text" class="input" placeholder="Type here to start the challenge!" (input)="grabValue($event.target.value)"/>
+    </div>
+
+    @if(randomSentence === enteredText){
+        <div class="box has-text-centered">
+        <h2 class="title" >You Win!!</h2>
+    </div>
+    }
+
+
+    
+        </div>
+    </div>
+ </div>
+

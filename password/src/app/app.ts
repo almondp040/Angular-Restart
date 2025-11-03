@@ -39,7 +39,43 @@ export class App {
 
   }
   onButton(){
-    this.password = 'Now, we are writing some angular!'; 
+    //This.password equals our password: 
+    const numbers = '123456789';
+    const letters = 'abcdefghijklmnopqrstuvwxyz'; 
+    const symbols = '!@#$%^&*()'; 
+
+//Puts it together: 
+    let validCharacters = ''; 
+
+    if (this.includeLetters) {
+      validCharacters += letters; 
+       
+    } 
+
+    if (this.includeNumbers) {
+      validCharacters += numbers; 
+      
+    }
+
+    if(this.includeSymbols){
+      validCharacters += symbols; 
+    }
+
+
+
+
+    let generatePassword = ''; 
+    
+  //Randomizes it: 
+    for (let index = 0; index < this.length; index++) {
+      const index = Math.floor(Math.random()* validCharacters.length); 
+      generatePassword += validCharacters[index]; 
+    }
+
+    console.log(validCharacters)
+    this.password = generatePassword; 
+
+   
     console.log(
       "Letters: ", this.includeLetters, 
       "Numbers: ", this.includeNumbers, 
