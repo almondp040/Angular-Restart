@@ -12,13 +12,47 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   password = ''; 
-  length = ''; 
+  length = 0; 
+  includeLetters = false; 
+  includeNumbers = false;
+  includeSymbols = false; 
 
+   onChangeUseLetters(){
+    this.includeLetters = !this.includeLetters; 
+  }
+
+  onChangeUseNumbers(){
+    this.includeNumbers = !this.includeNumbers;
+  }
+
+  onChangeUseSymbols(){
+    this.includeSymbols = !this.includeSymbols;
+  }
+
+  onChangeLength(value: string){
+      const parseValue = parseInt(value); 
+      console.log(parseValue)
+
+      if (!isNaN(parseValue)) {
+        this.length = parseValue
+      }
+
+  }
   onButton(){
     this.password = 'Now, we are writing some angular!'; 
+    console.log(
+      "Letters: ", this.includeLetters, 
+      "Numbers: ", this.includeNumbers, 
+      "Symbols: ", this.includeSymbols, 
+      "Length: ", this.length
+    )
   }
 
+
+
   getName(){
-    return 'Almond Paschal'
+    return this.length
   }
+
+
 }

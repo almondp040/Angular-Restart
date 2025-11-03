@@ -14,3 +14,9 @@
             - We can use the handlebar syntax {{method or property from class}}
             - We can set the value: <input [value] = "property or method">
             - We can set up event listeners: <button (click)="method()">
+
+    - Using Event Listeners! 
+        - On the element we can use "() = methodName()" and each time that specific event runs it will run the method! 
+        - For input events we must use this for example: (input)="onChangeLength($event)"
+        - We need the $ to access the event object for the elements
+        - We can also use: (input)="onChangeLength($event.target.value)

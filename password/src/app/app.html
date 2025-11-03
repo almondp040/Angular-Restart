@@ -10,16 +10,16 @@
   <h1>Password Generate</h1>
   <div>
   <label for="passwordLength">Length</label>
-  <input type="text" id="passwordLength" [value]="">
+  <input type="text" id="passwordLength" (input)="onChangeLength($event.target.value)">
   </div>
 
 
   <div class="checkboxes">
-  <input type="checkbox" name="letters" id="letters">
+  <input (change)="onChangeUseLetters()" type="checkbox" name="letters" id="letters" >
   <label for="letters">Use Letters</label>
-  <input type="checkbox" name="numbers" id="numbers">
+  <input (change)="onChangeUseNumbers()" type="checkbox" name="numbers" id="numbers">
   <label for="numbers">Use Numbers</label>
-  <input type="checkbox" name="symbols" id="symbols">
+  <input (change)="onChangeUseSymbols()" type="checkbox" name="symbols" id="symbols">
   <label for="symbols">Use Symbols</label>
   </div>
 
