@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, Injector, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,8 +8,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 
+
 export class App {
- 
+name: string | undefined = '';
+
+
  //Data: 
   images = [
 
@@ -40,5 +43,5 @@ export class App {
 
   ]
 
-  
 }
+
