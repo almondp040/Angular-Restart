@@ -4,21 +4,32 @@
 <nav aria-label="Page navigation example">
   
   <ul class="pagination">
-    
+    <li 
+    class="page-item"
+    [class.disabled]="currentPage === 0"
+    (click)="currentPage = currentPage - 1"
+    >
+      <a class="page-link">Previous</a>
+    </li>
     @for(image of images; track images; let index = $index){
 
-    <li class="page-item">
+    <li class="page-item"
+        [class.active]="index === currentPage" 
+        (click)="currentPage = index">
       <p>{{image.title}}</p>
-      <img src={{image.url}} alt="" width="500" height="600">
-      <a class="page-link">{{index +1}}</a>
+      <img src={{image.url}} alt="" width="300" height="300">
+      <a class="page-link">{{index + 1}}</a>
     </li>
+
 
 
     } @empty {
       <li>There are no items to display.</li>
     }
 
-    
+            <li class="page-item">
+      <a class="page-link">Next</a>
+    </li>
     
   </ul>
 </nav>

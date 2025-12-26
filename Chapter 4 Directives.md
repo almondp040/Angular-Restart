@@ -6,3 +6,6 @@
     - We can also build our own as well! 
 
 - These are the items we can use with @! 
+
+- The NgClass Directive
+    

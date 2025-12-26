@@ -1,6 +1,8 @@
 import { Component, Injector, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-root',
   imports: [],
@@ -12,7 +14,7 @@ import { RouterOutlet } from '@angular/router';
 export class App {
 name: string | undefined = '';
 
-
+currentPage = 0; //Will track what page we're on
  //Data: 
   images = [
 
@@ -50,6 +52,9 @@ name: string | undefined = '';
       return "No Images Found";
     }
   }
+
+
+
 
 }
 
