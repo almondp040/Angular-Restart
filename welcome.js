@@ -36,7 +36,7 @@ console.log(`What to do with this data? ${data}`);
 }); 
 
 
-export default nowLive = (name, age, DOB) =>{
+nowLive = (name, age, DOB) =>{
 
   const script = `Now let ${name}, live on until ${age}, and his ${DOB}`; 
   return script; 
@@ -48,3 +48,23 @@ const almondLives = nowLive('Almond', 30, "10/01/1995");
 console.log("Here's my function: ", almondLives); 
 
 
+class TextForAlmondLives {
+  constructor(name, age, DOB) {
+    this.name = name; 
+    this.age = age; 
+    this.DOB = DOB; 
+  }
+
+
+
+  nowLive(){
+    const script = `Now let ${this.name}, live on until ${this.age}, and his ${this.DOB}`; 
+    return script; 
+  }
+}; 
+
+
+const almondSays = new TextForAlmondLives('Almond', 30, "10/01/1995"); 
+console.log("Here's my class: ", almondSays.nowLive());
+
+export default TextForAlmondLives;

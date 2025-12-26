@@ -43,5 +43,13 @@ name: string | undefined = '';
 
   ]
 
+  giveMeTitle(){
+    if (this.images.length > 0) {
+      return this.images[0].title;
+    } else {
+      return "No Images Found";
+    }
+  }
+
 }
 
